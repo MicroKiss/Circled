@@ -1,4 +1,4 @@
 
 event_inherited();
 
-room_goto(e1m1);
+TransitionStart(e1m1, outTransition1);

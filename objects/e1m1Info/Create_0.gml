@@ -1,0 +1,1 @@
+text = "Meet each other!"

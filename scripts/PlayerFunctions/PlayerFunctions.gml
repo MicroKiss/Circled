@@ -18,14 +18,14 @@ function GetInputs(deviceNumber, controls = undefined){
 
 
 function HandleMovement () {
-	var additionalVsp = (inputs.moveDown - inputs.moveUp) * attributes.movSpeed;
-	var additionalHsp = (inputs.moveRight - inputs.moveLeft) * attributes.movSpeed;
+	var additionalVsp = (inputs.moveDown - inputs.moveUp) * attributes.movSpeed * global.deltaTime;
+	var additionalHsp = (inputs.moveRight - inputs.moveLeft) * attributes.movSpeed * global.deltaTime;
 
-	var myfriction = 200;
+	var myfriction = 3;
 	ax = -vx * myfriction * global.deltaTime;
 	ay = -vy * myfriction * global.deltaTime;
-	vx += (ax + additionalHsp) * global.deltaTime;
-	vy += (ay + additionalVsp) * global.deltaTime;
+	vx += (ax + additionalHsp) ;
+	vy += (ay + additionalVsp) ;
 
 	if (IsNear (vx))
 		vx = 0;
@@ -54,8 +54,8 @@ function HandleMovement () {
 			if (tmpY != 0) {
 				len = point_distance(0,0,vx,tmpY);
 				var dir = point_direction(0,0,vx,tmpY);
-				vx = lengthdir_x(len,dir) / 2 * global.deltaTime;
-				vy = lengthdir_y(len,dir) / 2 * global.deltaTime;
+				vx = lengthdir_x(len,dir) / 2 ;
+				vy = lengthdir_y(len,dir) / 2 ;
 			}
 		}
 	}
@@ -80,8 +80,8 @@ function HandleMovement () {
 			if (tmpX != 0) {
 				len = point_distance(0,0,tmpX,vy);
 				var dir = point_direction(0,0,tmpX,vy);
-				vx = lengthdir_x(len,dir) / 2 * global.deltaTime;
-				vy = lengthdir_y(len,dir) / 2 * global.deltaTime;
+				vx = lengthdir_x(len,dir) / 2;
+				vy = lengthdir_y(len,dir) / 2;
 			}
 		}
 	}
