@@ -1,5 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
 function GetInputs(deviceNumber, controls = undefined){
 	inputs.moveRight = gamepad_axis_value(deviceNumber,gp_axislh) > .5;
 	inputs.moveLeft = gamepad_axis_value(deviceNumber,gp_axislh) < -.5;
@@ -16,44 +17,55 @@ function GetInputs(deviceNumber, controls = undefined){
 	}
 }
 
-
+global.myfriction = 3;
+global.precision = 0.1;
 function HandleMovement () {
-	var additionalVsp = (inputs.moveDown - inputs.moveUp) * attributes.movSpeed * global.deltaTime;
-	var additionalHsp = (inputs.moveRight - inputs.moveLeft) * attributes.movSpeed * global.deltaTime;
+	var additionalVsp = (inputs.moveDown - inputs.moveUp) * attributes.movSpeed;
+	var additionalHsp = (inputs.moveRight - inputs.moveLeft) * attributes.movSpeed;
 
-	var myfriction = 3;
-	ax = -vx * myfriction * global.deltaTime;
-	ay = -vy * myfriction * global.deltaTime;
-	vx += (ax + additionalHsp) ;
-	vy += (ay + additionalVsp) ;
 
-	if (IsNear (vx))
-		vx = 0;
-	if (IsNear (vy))
-		vy = 0;
+    var loopindex = ceil(global.deltaTime / global.precision);
+
+    for (var i = 0; i < loopindex; i++) {
+        var dT = global.deltaTime / loopindex;
+
+		ax = -vx * global.myfriction;
+		ay = -vy * global.myfriction;
+		vx += (ax + additionalHsp) * dT ;
+		vy += (ay + additionalVsp) * dT ;
+		
+		
+
+		
+
+		if (IsNear (vx))
+			vx = 0;
+		if (IsNear (vy))
+			vy = 0;
 
 
 	var maxDisplace = 5;
+	var speedMultiplier = 50;
 	
 	if (vx !=0) {
 		var tmpY = 0;
-		if (place_meeting(x+vx,y,Solid)) {
-			if(!place_meeting(x+vx,y+maxDisplace,Solid)) {
+		if (place_meeting(x + vx * dT,y,Solid)) {
+			if(!place_meeting(x+vx * dT,y+maxDisplace,Solid)) {
 				tmpY = 2;
-				while(place_meeting(x+vx,y+tmpY,Solid)) {
+				while(place_meeting(x+vx * dT,y+tmpY,Solid)) {
 					tmpY++;
 				}
-			} else if(!place_meeting(x+vx,y-maxDisplace,Solid)) {
+			} else if(!place_meeting(x+vx * dT,y-maxDisplace,Solid)) {
 				tmpY = -2;
-				while(place_meeting(x+vx,y+tmpY,Solid)) {
+				while(place_meeting(x+vx * dT,y+tmpY,Solid)) {
 					tmpY--;
 				}
 			} else
 				vx = 0;
 				
 			if (tmpY != 0) {
-				len = point_distance(0,0,vx,tmpY);
-				var dir = point_direction(0,0,vx,tmpY);
+				len = speedMultiplier*point_distance(0,0,vx * dT,tmpY);
+				var dir = point_direction(0,0,vx * dT,tmpY);
 				vx = lengthdir_x(len,dir) / 2 ;
 				vy = lengthdir_y(len,dir) / 2 ;
 			}
@@ -63,31 +75,31 @@ function HandleMovement () {
 
 	if (vy != 0) {
 		var tmpX = 0;
-		if (place_meeting(x,y+vy,Solid)) {
-			if(!place_meeting(x+maxDisplace,y+vy,Solid)) {
+		if (place_meeting(x,y+vy * dT,Solid)) {
+			if(!place_meeting(x+maxDisplace,y+vy * dT,Solid)) {
 				tmpX = 2;
-				while(place_meeting(x+tmpX,y+vy,Solid)) {
+				while(place_meeting(x+tmpX,y+vy * dT,Solid)) {
 					tmpX++;
 				}
-			} else if(!place_meeting(x-maxDisplace,y+vy,Solid)) {
+			} else if(!place_meeting(x-maxDisplace,y+vy * dT,Solid)) {
 				tmpX = -2;
-				while(place_meeting(x+tmpX,y+vy,Solid)) {
+				while(place_meeting(x+tmpX,y+vy * dT,Solid)) {
 					tmpX--;
 				}
 			} else
 				vy = 0;
 				
 			if (tmpX != 0) {
-				len = point_distance(0,0,tmpX,vy);
-				var dir = point_direction(0,0,tmpX,vy);
+				len = speedMultiplier*point_distance(0,0,tmpX,vy * dT);
+				var dir = point_direction(0,0,tmpX,vy * dT);
 				vx = lengthdir_x(len,dir) / 2;
 				vy = lengthdir_y(len,dir) / 2;
 			}
 		}
 	}
-
-	x += vx;
-	y += vy;
+		x += vx * dT;
+		y += vy * dT;
+	}
 }
 
 

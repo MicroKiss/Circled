@@ -2,7 +2,7 @@
 attributes = {
 	maxHealth : 100,
 	currHealth: 100,
-	movSpeed :30
+	movSpeed :1000
 };
 
 controls = undefined;
