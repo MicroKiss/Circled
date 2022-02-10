@@ -52,10 +52,11 @@ vertexArray[vertexCount - 1][1] = Player2.y;
 //	// rubber rope effect between Players 
 if (point_distance(Player1.x,Player1.y,Player2.x,Player2.y) > maxPlayerDistance) {
 	var dir = point_direction(Player1.x,Player1.y,Player2.x,Player2.y);
-	Player1.vx += lengthdir_x(Player1.attributes.movSpeed/40,dir);
-	Player1.vy += lengthdir_y(Player1.attributes.movSpeed/40,dir);
-	Player2.vx -= lengthdir_x(Player2.attributes.movSpeed/40,dir);
-	Player2.vy -= lengthdir_y(Player2.attributes.movSpeed/40,dir);
+	var speedMultiplier = 1.4;
+	Player1.vx += lengthdir_x(Player1.attributes.movSpeed,dir) * speedMultiplier * global.deltaTime;
+	Player1.vy += lengthdir_y(Player1.attributes.movSpeed,dir) * speedMultiplier * global.deltaTime;
+	Player2.vx -= lengthdir_x(Player2.attributes.movSpeed,dir) * speedMultiplier * global.deltaTime;
+	Player2.vy -= lengthdir_y(Player2.attributes.movSpeed,dir) * speedMultiplier * global.deltaTime;
 }
 
 
