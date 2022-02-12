@@ -1,16 +1,13 @@
 {
   "spriteId": {
-    "name": "Sprite24",
-    "path": "sprites/Sprite24/Sprite24.yy",
+    "name": "ruleSprite",
+    "path": "sprites/ruleSprite/ruleSprite.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "textObject",
-    "path": "objects/textObject/textObject.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,16 +21,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "UI",
-    "path": "folders/Objects/UI.yy",
+    "name": "Rules",
+    "path": "folders/Objects/levelDependent/Rules.yy",
   },
   "resourceVersion": "1.0",
-  "name": "e1m1Info",
+  "name": "e1m4Rule",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -1,1 +1,0 @@
-text = "Make a Circle around \nall the enemies!"

@@ -1,2 +1,2 @@
-if(instance_number(Enemy) == 0)
-	TransitionStart(victoryRoom,outTransition1);
+if (instance_number (Enemy) == 0)
+	TransitionStart (room_next(room), outTransition1);

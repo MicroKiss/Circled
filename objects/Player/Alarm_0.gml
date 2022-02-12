@@ -1,0 +1,3 @@
+/// attackTimer
+
+canAttack = true;

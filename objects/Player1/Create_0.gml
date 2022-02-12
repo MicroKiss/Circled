@@ -5,7 +5,8 @@ controls = {
 	moveUp:ord("W"),
 	moveLeft:ord("A"),
 	moveDown:ord("S"),
-	use:ord("J")
+	use:ord("J"),
+	attack:ord("K")
 };
 
 deviceNumber = 0;

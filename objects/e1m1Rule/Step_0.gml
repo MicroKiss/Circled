@@ -1,2 +1,2 @@
- if ( position_meeting(Player1.x,Player1.y,Player2))
-	TransitionStart(e1m2,outTransition1);
+if (place_meeting(x,y,Player1) && place_meeting(x,y,Player2) )
+	TransitionStart (room_next(room), outTransition1);

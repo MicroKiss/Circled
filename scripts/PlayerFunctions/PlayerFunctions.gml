@@ -6,7 +6,8 @@ function GetInputs(deviceNumber, controls = undefined){
 	inputs.moveLeft = gamepad_axis_value(deviceNumber,gp_axislh) < -.5;
 	inputs.moveDown = gamepad_axis_value(deviceNumber,gp_axislv) > .5;
 	inputs.moveUp = gamepad_axis_value(deviceNumber,gp_axislv) < -.5;
-	inputs.use = gamepad_button_check_pressed(deviceNumber,gp_face1) //A
+	inputs.use = gamepad_button_check_pressed(deviceNumber,gp_face1); //A
+	inputs.attack = gamepad_button_check_pressed(deviceNumber,gp_face3); //X
 	
 	if(controls != undefined) {
 	inputs.moveRight |= keyboard_check(controls.moveRight);
@@ -14,14 +15,15 @@ function GetInputs(deviceNumber, controls = undefined){
 	inputs.moveDown |= keyboard_check(controls.moveDown);
 	inputs.moveUp |= keyboard_check(controls.moveUp);
 	inputs.use |= keyboard_check(controls.use);
+	inputs.attack |= keyboard_check(controls.attack);
 	}
 }
 
 global.myfriction = 3;
 global.precision = 0.1;
 function HandleMovement () {
-	var additionalVsp = (inputs.moveDown - inputs.moveUp) * attributes.movSpeed;
-	var additionalHsp = (inputs.moveRight - inputs.moveLeft) * attributes.movSpeed;
+	var additionalVsp = (inputs.moveDown - inputs.moveUp) * spd;
+	var additionalHsp = (inputs.moveRight - inputs.moveLeft) * spd;
 
 
     var loopindex = ceil(global.deltaTime / global.precision);
@@ -34,10 +36,6 @@ function HandleMovement () {
 		vx += (ax + additionalHsp) * dT ;
 		vy += (ay + additionalVsp) * dT ;
 		
-		
-
-		
-
 		if (IsNear (vx))
 			vx = 0;
 		if (IsNear (vy))
@@ -72,7 +70,6 @@ function HandleMovement () {
 		}
 	}
 
-
 	if (vy != 0) {
 		var tmpX = 0;
 		if (place_meeting(x,y+vy * dT,Solid)) {
@@ -97,14 +94,27 @@ function HandleMovement () {
 			}
 		}
 	}
+		if (vx != 0 && vy != 0) 
+			lastDir = point_direction(0,0,vx,vy);
 		x += vx * dT;
 		y += vy * dT;
 	}
 }
 
 
+function Unstuck () {
+	var o = instance_place(x, y, Solid);
+	if (o) {
+		dir = point_direction (o.x,o.y,x,y);
+		x += lengthdir_x (1,dir);
+		y += lengthdir_y (1,dir);
+	}
+}
+
+
+
 function HandleButtons () {
-	if(inputs.use) {
+	if (inputs.use) {
 		var button = instance_place(x, y, Button);
 		if (button) {
 		    with (button) {
@@ -116,11 +126,11 @@ function HandleButtons () {
 }
 
 
-function Unstuck () {
-	var o = instance_place(x, y, Solid);
-	if (o) {
-		dir = point_direction (o.x,o.y,x,y);
-		x += lengthdir_x (1,dir);
-		y += lengthdir_y (1,dir);
+function HandleAttack () {
+	if (inputs.attack && canAttack) {
+		canAttack = false;
+		alarm_set(0,room_speed)
+		bullet = instance_create_depth(x,y,depth-1,BulletFriendly);
+		bullet.dir = lastDir;
 	}
 }

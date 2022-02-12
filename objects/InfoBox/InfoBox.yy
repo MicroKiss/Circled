@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "Sprite24",
-    "path": "sprites/Sprite24/Sprite24.yy",
+    "name": "infoBoxSprite",
+    "path": "sprites/infoBoxSprite/infoBoxSprite.yy",
   },
   "solid": false,
   "visible": true,
@@ -29,11 +29,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "UI",
-    "path": "folders/Objects/UI.yy",
+    "name": "InfoBoxes",
+    "path": "folders/Objects/levelDependent/InfoBoxes.yy",
   },
   "resourceVersion": "1.0",
-  "name": "e1m2Info",
+  "name": "InfoBox",
   "tags": [],
   "resourceType": "GMObject",
 }

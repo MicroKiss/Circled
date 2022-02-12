@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "playerSkins",
+    "path": "folders/Sprites/EntitySprites/playerSkins.yy",
   },
   "resourceVersion": "1.0",
   "name": "playerSkin4",

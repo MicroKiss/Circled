@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Misc",
-    "path": "folders/Objects/Misc.yy",
+    "name": "Rules",
+    "path": "folders/Objects/levelDependent/Rules.yy",
   },
   "resourceVersion": "1.0",
   "name": "e1m2Rule",

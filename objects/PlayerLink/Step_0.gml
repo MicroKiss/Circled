@@ -53,10 +53,10 @@ vertexArray[vertexCount - 1][1] = Player2.y;
 if (point_distance(Player1.x,Player1.y,Player2.x,Player2.y) > maxPlayerDistance) {
 	var dir = point_direction(Player1.x,Player1.y,Player2.x,Player2.y);
 	var speedMultiplier = 1.4;
-	Player1.vx += lengthdir_x(Player1.attributes.movSpeed,dir) * speedMultiplier * global.deltaTime;
-	Player1.vy += lengthdir_y(Player1.attributes.movSpeed,dir) * speedMultiplier * global.deltaTime;
-	Player2.vx -= lengthdir_x(Player2.attributes.movSpeed,dir) * speedMultiplier * global.deltaTime;
-	Player2.vy -= lengthdir_y(Player2.attributes.movSpeed,dir) * speedMultiplier * global.deltaTime;
+	Player1.vx += lengthdir_x(Player1.spd,dir) * speedMultiplier * global.deltaTime;
+	Player1.vy += lengthdir_y(Player1.spd,dir) * speedMultiplier * global.deltaTime;
+	Player2.vx -= lengthdir_x(Player2.spd,dir) * speedMultiplier * global.deltaTime;
+	Player2.vy -= lengthdir_y(Player2.spd,dir) * speedMultiplier * global.deltaTime;
 }
 
 
