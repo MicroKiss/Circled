@@ -150,7 +150,7 @@ function RopeDrawRope ()
 
 
 function RopeHandleThrowing () 
-{
+{	
 	if (!thrown && Player1.wantsToThrow && Player2.wantsToThrow) {
 		thrown = true;
 		dir1 = Player1.lastDir;

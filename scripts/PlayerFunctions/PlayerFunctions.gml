@@ -91,11 +91,11 @@ function PlayerHandleMovement () {
 			}
 		}
 	}
-		if (vx != 0 && vy != 0) 
-			lastDir = point_direction (0, 0, vx, vy);
 		x += vx * dT;
 		y += vy * dT;
 	}
+	if (vx != 0 && vy != 0) 
+		lastDir = point_direction (0, 0, vx, vy);
 }
 
 
