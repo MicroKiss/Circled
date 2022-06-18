@@ -1,5 +1,4 @@
-GetInputs (deviceNumber, controls);
-HandleMovement ();
-Unstuck ();
-HandleButtons ();
-HandleAttack ();
+PlayerGetInputs (deviceNumber, controls);
+PlayerHandleMovement ();
+PlayerUnstuck ();
+PlayerHandleButtons ();

@@ -1,6 +1,8 @@
 var count = 2;
+
 if (current_time > 30000)
 	count = min (floor (current_time / 10000), 10)
+	
 for (var i = 0; i < count; ++i) {
 	var randX, randY;
 	if (irandom (1) == 0) {

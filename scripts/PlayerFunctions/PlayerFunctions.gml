@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
-function GetInputs(deviceNumber, controls = undefined){
+function PlayerGetInputs(deviceNumber, controls = undefined){
 	inputs.moveRight = gamepad_axis_value (deviceNumber, gp_axislh) > .5;
 	inputs.moveLeft = gamepad_axis_value (deviceNumber, gp_axislh) < -.5;
 	inputs.moveDown = gamepad_axis_value (deviceNumber, gp_axislv) > .5;
@@ -19,20 +19,18 @@ function GetInputs(deviceNumber, controls = undefined){
 	}
 }
 
-global.myfriction = 3;
+
 global.precision = 0.1;
-function HandleMovement () {
+function PlayerHandleMovement () {
 	var additionalVsp = (inputs.moveDown - inputs.moveUp) * spd;
 	var additionalHsp = (inputs.moveRight - inputs.moveLeft) * spd;
-
-
     var loopindex = ceil (global.deltaTime / global.precision);
 
     for (var i = 0; i < loopindex; i++) {
         var dT = global.deltaTime / loopindex;
 
-		ax = -vx * global.myfriction;
-		ay = -vy * global.myfriction;
+		ax = -vx * 3;
+		ay = -vy * 3;
 		vx += (ax + additionalHsp) * dT ;
 		vy += (ay + additionalVsp) * dT ;
 		
@@ -40,7 +38,6 @@ function HandleMovement () {
 			vx = 0;
 		if (IsNear (vy))
 			vy = 0;
-
 
 	var maxDisplace = 5;
 	var speedMultiplier = 50;
@@ -102,7 +99,7 @@ function HandleMovement () {
 }
 
 
-function Unstuck () {
+function PlayerUnstuck () {
 	var o = instance_place (x, y, Solid);
 	if (o) {
 		dir = point_direction (o.x, o.y, x, y);
@@ -112,7 +109,7 @@ function Unstuck () {
 }
 
 
-function HandleButtons () {
+function PlayerHandleButtons () {
 	if (inputs.use) {
 		var button = instance_place (x, y, Button);
 		if (button) {
@@ -121,15 +118,11 @@ function HandleButtons () {
 			}
 		}
 	}
-
+	
+	PlayerHandleThrow ();
 }
 
 
-function HandleAttack () {
-	if (inputs.attack && canAttack) {
-		canAttack = false;
-		alarm_set (0, room_speed)
-		bullet = instance_create_depth (x, y, depth-1, BulletFriendly);
-		bullet.dir = lastDir;
-	}
+function PlayerHandleThrow () {
+	wantsToThrow = inputs.attack;
 }
