@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"cameraSprite","path":"sprites/cameraSprite/cameraSprite.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "cameraSprite",
     "tags": [],
     "resourceType": "GMSequence",

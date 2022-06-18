@@ -1,13 +1,17 @@
-function GetNextPlayerSkin(playerSkin)
+
+
+function GetNextPlayerSkin(player)
 {
-	if (playerSkin == playerSkin1)
-		return playerSkin2;
-	if (playerSkin == playerSkin2)
-		return playerSkin3;
-	if (playerSkin == playerSkin3)
-		return playerSkin4;
-	if (playerSkin == playerSkin4)
-		return playerSkin5;
-	if (playerSkin == playerSkin5)
-		return playerSkin1;
+	var skinCount = array_length (playerSkins);
+	playerSkin = player.sprite_index;
+	var i = 0;
+	for (; i < skinCount; ++i) {
+		if (playerSkins[i] == playerSkin)
+			break;
+	}
+	var nextSkinIndex = (i + 1) % skinCount;
+	if (playerSkins[nextSkinIndex] == Player1.sprite_index 
+	||  playerSkins[nextSkinIndex] == Player2.sprite_index) 
+		nextSkinIndex = (nextSkinIndex + 1) % skinCount;
+	player.sprite_index = playerSkins[nextSkinIndex];
 }

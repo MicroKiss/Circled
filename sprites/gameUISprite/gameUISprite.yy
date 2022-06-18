@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"gameUISprite","path":"sprites/gameUISprite/gameUISprite.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "gameUISprite",
     "tags": [],
     "resourceType": "GMSequence",

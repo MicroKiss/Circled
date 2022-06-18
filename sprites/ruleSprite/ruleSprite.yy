@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"ruleSprite","path":"sprites/ruleSprite/ruleSprite.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "ruleSprite",
     "tags": [],
     "resourceType": "GMSequence",

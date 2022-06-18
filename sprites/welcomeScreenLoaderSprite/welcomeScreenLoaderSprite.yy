@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"welcomeScreenLoaderSprite","path":"sprites/welcomeScreenLoaderSprite/welcomeScreenLoaderSprite.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "welcomeScreenLoaderSprite",
     "tags": [],
     "resourceType": "GMSequence",

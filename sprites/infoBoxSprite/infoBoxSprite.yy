@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"infoBoxSprite","path":"sprites/infoBoxSprite/infoBoxSprite.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "infoBoxSprite",
     "tags": [],
     "resourceType": "GMSequence",

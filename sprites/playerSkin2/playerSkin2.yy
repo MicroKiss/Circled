@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"playerSkin2","path":"sprites/playerSkin2/playerSkin2.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "playerSkin2",
     "tags": [],
     "resourceType": "GMSequence",

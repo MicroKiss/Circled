@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"resourceManagerSprite","path":"sprites/resourceManagerSprite/resourceManagerSprite.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "resourceManagerSprite",
     "tags": [],
     "resourceType": "GMSequence",

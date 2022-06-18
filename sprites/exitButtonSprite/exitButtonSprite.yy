@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"exitButtonSprite","path":"sprites/exitButtonSprite/exitButtonSprite.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "exitButtonSprite",
     "tags": [],
     "resourceType": "GMSequence",

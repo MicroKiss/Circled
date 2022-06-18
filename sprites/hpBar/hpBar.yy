@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"hpBar","path":"sprites/hpBar/hpBar.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "hpBar",
     "tags": [],
     "resourceType": "GMSequence",

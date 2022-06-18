@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"playerLinkSprite","path":"sprites/playerLinkSprite/playerLinkSprite.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "playerLinkSprite",
     "tags": [],
     "resourceType": "GMSequence",

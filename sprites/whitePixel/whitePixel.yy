@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"whitePixel","path":"sprites/whitePixel/whitePixel.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "whitePixel",
     "tags": [],
     "resourceType": "GMSequence",

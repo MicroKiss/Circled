@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"hpBarFiller","path":"sprites/hpBarFiller/hpBarFiller.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "hpBarFiller",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"wardrobe","path":"sprites/wardrobe/wardrobe.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "wardrobe",
     "tags": [],
     "resourceType": "GMSequence",

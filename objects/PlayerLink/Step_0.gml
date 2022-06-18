@@ -64,33 +64,64 @@ if (point_distance(Player1.x,Player1.y,Player2.x,Player2.y) > maxPlayerDistance)
 isCircle = false;
 if (Distance(vertexArray[0],vertexArray[vertexCount - 1]) < 30) {
 	isCircle = true;
-	 middlePointX = 0;
-	 middlePointY = 0;
+	middlePoints[0][0] = 0; //x
+	middlePoints[0][1] = 0; //y
+	middlePoints[0][2] = 0; //usedPoints
+	middlePoints[1][0] = 0;
+	middlePoints[1][1] = 0;
+	middlePoints[1][2] = 0;
 	
+	var ignoredCirclePortion = floor( vertexCount /2/3);
 	for (var i = 0; i < vertexCount / 2; ++i) {
 	    var dis = Distance(vertexArray[i],vertexArray[vertexCount / 2 + i]);
 		if (dis < circleTreshold) {
 			isCircle = false;
 			break;
 		}
-		middlePointX += vertexArray[i][0] + vertexArray[vertexCount / 2 + i][0];
-		middlePointY += vertexArray[i][1] + vertexArray[vertexCount / 2 + i][1];
-	}
-	if (isCircle) {
-		middlePointX /= vertexCount;
-		middlePointY /= vertexCount;
-		var inst;
-		inst = instance_position(middlePointX, middlePointY, Enemy);
-		if (inst != noone) {
-			audio_play_sound(applauseSound, 0, 0);
-			with (inst) instance_destroy();
-			array_resize(history,array_length_1d(history) + 1);
-			history[array_length_1d(history) - 1] = [];
-			for (var j = 0;j < array_length_1d (vertexArray);++j) {
-				history[array_length_1d(history) - 1][j] = [];
-				array_copy (history[array_length_1d(history) - 1][j], 0, vertexArray[j], 0, array_length_1d(vertexArray[j]));
-			}
-			
+		{
+			middlePoints[0][0] += vertexArray[i][0] + vertexArray[vertexCount / 2 + i][0];
+			middlePoints[0][1] += vertexArray[i][1] + vertexArray[vertexCount / 2 + i][1];
+			middlePoints[0][2] += 2;
 		}
+		{
+			if (i < ignoredCirclePortion) {
+				middlePoints[1][0] += vertexArray[vertexCount / 2 + i][0];
+				middlePoints[1][1] += vertexArray[vertexCount / 2 + i][1];
+				middlePoints[1][2]++;
+			} else if (i > vertexCount /2 - ignoredCirclePortion) {
+				middlePoints[1][0] += vertexArray[i][0];
+				middlePoints[1][1] += vertexArray[i][1];
+				middlePoints[1][2]++;
+			} else {
+				middlePoints[1][0] += vertexArray[i][0] + vertexArray[vertexCount / 2 + i][0];
+				middlePoints[1][1] += vertexArray[i][1] + vertexArray[vertexCount / 2 + i][1];
+				middlePoints[1][2] += 2;
+			}
+		}
+	}
+	
+	if (isCircle) {
+		middlePoints[0][0] /= middlePoints[0][2];
+		middlePoints[0][1] /= middlePoints[0][2];
+		middlePoints[1][0] /= middlePoints[1][2];
+		middlePoints[1][1] /= middlePoints[1][2];
+		
+		for (var i = 0; i < array_length (middlePoints); ++i) {
+			var inst;
+			inst = instance_position(middlePoints[i][0], middlePoints[i][1], Enemy);
+			if (inst != noone) {
+				audio_play_sound(applauseSound, 0, 0);
+				with (inst) instance_destroy();
+				array_resize(history,array_length(history) + 1);
+				history[array_length(history) - 1] = [];
+				for (var j = 0;j < array_length (vertexArray);++j) {
+					history[array_length(history) - 1][j] = [];
+					array_copy (history[array_length(history) - 1][j], 0, vertexArray[j], 0, array_length(vertexArray[j]));
+				}
+			
+			}
+		}
+		
+
 	}
 }

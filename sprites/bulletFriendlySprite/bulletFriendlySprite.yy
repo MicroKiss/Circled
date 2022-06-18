@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"bulletFriendlySprite","path":"sprites/bulletFriendlySprite/bulletFriendlySprite.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "bulletFriendlySprite",
     "tags": [],
     "resourceType": "GMSequence",
