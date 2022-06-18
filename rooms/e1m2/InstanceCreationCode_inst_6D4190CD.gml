@@ -1,0 +1,1 @@
+text = "Even tho you dealt with them there were to many!"

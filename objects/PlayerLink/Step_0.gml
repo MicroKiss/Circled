@@ -60,52 +60,81 @@ if (point_distance(Player1.x,Player1.y,Player2.x,Player2.y) > maxPlayerDistance)
 }
 
 
+
+ellipseXL = vertexArray[0][0];
+ellipseXR = vertexArray[0][0];
+ellipseYT = vertexArray[0][1];
+ellipseYB = vertexArray[0][1];
+//for (var i = 0; i < array_length (middlePoints); ++i) {
+//	middlePoints[i][0] = 0; //x
+//	middlePoints[i][1] = 0; //y
+//	middlePoints[i][2] = 0; //usedPoints
+//}
 //check if makes circle and kill enemy
 isCircle = false;
+
 if (Distance(vertexArray[0],vertexArray[vertexCount - 1]) < 30) {
 	isCircle = true;
-	middlePoints[0][0] = 0; //x
-	middlePoints[0][1] = 0; //y
-	middlePoints[0][2] = 0; //usedPoints
-	middlePoints[1][0] = 0;
-	middlePoints[1][1] = 0;
-	middlePoints[1][2] = 0;
-	
-	var ignoredCirclePortion = floor( vertexCount /2/3);
+	var ignoredCirclePortion = floor (vertexCount /2/3);
 	for (var i = 0; i < vertexCount / 2; ++i) {
 	    var dis = Distance(vertexArray[i],vertexArray[vertexCount / 2 + i]);
 		if (dis < circleTreshold) {
 			isCircle = false;
 			break;
 		}
-		{
-			middlePoints[0][0] += vertexArray[i][0] + vertexArray[vertexCount / 2 + i][0];
-			middlePoints[0][1] += vertexArray[i][1] + vertexArray[vertexCount / 2 + i][1];
-			middlePoints[0][2] += 2;
+		
+		{//collisionHelp
+			ellipseXL = min (ellipseXL, vertexArray[i][0], vertexArray[vertexCount / 2 + i][0]);
+			ellipseXR = max (ellipseXR, vertexArray[i][0], vertexArray[vertexCount / 2 + i][0]);
+			ellipseYT = min (ellipseYT, vertexArray[i][1], vertexArray[vertexCount / 2 + i][1]);
+			ellipseYB = max (ellipseYB, vertexArray[i][1], vertexArray[vertexCount / 2 + i][1]);
 		}
-		{
-			if (i < ignoredCirclePortion) {
-				middlePoints[1][0] += vertexArray[vertexCount / 2 + i][0];
-				middlePoints[1][1] += vertexArray[vertexCount / 2 + i][1];
-				middlePoints[1][2]++;
-			} else if (i > vertexCount /2 - ignoredCirclePortion) {
-				middlePoints[1][0] += vertexArray[i][0];
-				middlePoints[1][1] += vertexArray[i][1];
-				middlePoints[1][2]++;
-			} else {
-				middlePoints[1][0] += vertexArray[i][0] + vertexArray[vertexCount / 2 + i][0];
-				middlePoints[1][1] += vertexArray[i][1] + vertexArray[vertexCount / 2 + i][1];
-				middlePoints[1][2] += 2;
-			}
+		{// point1
+			//middlePoints[0][0] += vertexArray[i][0] + vertexArray[vertexCount / 2 + i][0];
+			//middlePoints[0][1] += vertexArray[i][1] + vertexArray[vertexCount / 2 + i][1];
+			//middlePoints[0][2] += 2;
+		}
+		{// point2
+			//if (i < ignoredCirclePortion) {
+			//	middlePoints[1][0] += vertexArray[vertexCount / 2 + i][0];
+			//	middlePoints[1][1] += vertexArray[vertexCount / 2 + i][1];
+			//	middlePoints[1][2]++;
+			//} else if (i > vertexCount /2 - ignoredCirclePortion) {
+			//	middlePoints[1][0] += vertexArray[i][0];
+			//	middlePoints[1][1] += vertexArray[i][1];
+			//	middlePoints[1][2]++;
+			//} else {
+			//	middlePoints[1][0] += vertexArray[i][0] + vertexArray[vertexCount / 2 + i][0];
+			//	middlePoints[1][1] += vertexArray[i][1] + vertexArray[vertexCount / 2 + i][1];
+			//	middlePoints[1][2] += 2;
+			//}
 		}
 	}
+	ellipseXL += 30;
+	ellipseXR -= 30;
+	ellipseYT += 30;
+	ellipseYB -= 30;
 	
 	if (isCircle) {
-		middlePoints[0][0] /= middlePoints[0][2];
-		middlePoints[0][1] /= middlePoints[0][2];
-		middlePoints[1][0] /= middlePoints[1][2];
-		middlePoints[1][1] /= middlePoints[1][2];
+		//middlePoints[0][0] /= middlePoints[0][2];
+		//middlePoints[0][1] /= middlePoints[0][2];
+		//middlePoints[1][0] /= middlePoints[1][2];
+		//middlePoints[1][1] /= middlePoints[1][2];
 		
+		
+		var inst = collision_ellipse (ellipseXL, ellipseYT, ellipseXR, ellipseYB, Enemy, false, false);
+		if (inst != noone) {
+			audio_play_sound(applauseSound, 0, 0);
+			with (inst) instance_destroy();
+			array_resize(history,array_length(history) + 1);
+			history[array_length(history) - 1] = [];
+			for (var j = 0;j < array_length (vertexArray);++j) {
+				history[array_length(history) - 1][j] = [];
+				array_copy (history[array_length(history) - 1][j], 0, vertexArray[j], 0, array_length(vertexArray[j]));
+			}
+		}
+		
+		/*
 		for (var i = 0; i < array_length (middlePoints); ++i) {
 			var inst;
 			inst = instance_position(middlePoints[i][0], middlePoints[i][1], Enemy);
@@ -121,7 +150,7 @@ if (Distance(vertexArray[0],vertexArray[vertexCount - 1]) < 30) {
 			
 			}
 		}
-		
+		*/
 
 	}
 }

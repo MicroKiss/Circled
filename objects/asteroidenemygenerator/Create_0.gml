@@ -1,0 +1,1 @@
+alarm_set (0, 5 * room_speed);

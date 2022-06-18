@@ -1,1 +1,1 @@
-text = "You tried to fight back"
+text = "You tried to fight back\n you picked up a rope and \n treid to strangle them"

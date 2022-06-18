@@ -1,1 +1,1 @@
-text = "Meet each other!"
+text = "They imprisoned you! :@\n They tried to rope yout together so you won't escape \n But they miscalcualted it! \n Go and Escape! (Meet each other!)"

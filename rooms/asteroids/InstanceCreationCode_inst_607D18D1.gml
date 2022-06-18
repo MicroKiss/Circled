@@ -1,0 +1,1 @@
+text = "try to survive :)!"

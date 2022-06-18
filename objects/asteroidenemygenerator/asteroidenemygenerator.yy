@@ -1,17 +1,14 @@
 {
   "spriteId": {
-    "name": "infoBoxSprite",
-    "path": "sprites/infoBoxSprite/infoBoxSprite.yy",
+    "name": "resourceManagerSprite",
+    "path": "sprites/resourceManagerSprite/resourceManagerSprite.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "textObject",
-    "path": "objects/textObject/textObject.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -25,16 +22,17 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Misc",
-    "path": "folders/Objects/Misc.yy",
+    "name": "asteroids",
+    "path": "folders/Objects/levelDependent/asteroids.yy",
   },
   "resourceVersion": "1.0",
-  "name": "InfoBox",
+  "name": "asteroidEnemyGenerator",
   "tags": [],
   "resourceType": "GMObject",
 }

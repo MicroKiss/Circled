@@ -1,9 +1,15 @@
+
+		
+
 if(isCircle) {
+
+
 	var originalColor = draw_get_color ();
 	draw_set_colour(c_green);
-	for (var i = 0; i < array_length (middlePoints); ++i) {
-	    draw_circle (middlePoints[i][0],middlePoints[i][1],5,false);
-	}
+	draw_ellipse (ellipseXL, ellipseYT, ellipseXR, ellipseYB, false);
+	//for (var i = 0; i < array_length (middlePoints); ++i) {
+	//    draw_circle (middlePoints[i][0],middlePoints[i][1],5,false);
+	//}
 	draw_set_colour(originalColor);
 }
 		
