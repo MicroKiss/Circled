@@ -156,8 +156,8 @@ function RopeHandleStateChanges ()
 			state = states.thrown;
 			dir1 = Player1.lastDir;
 			dir2 = Player2.lastDir;
-			moveSpeed1 = 500 + abs (Player1.vx) + abs (Player1.vy);
-			moveSpeed2 = 500 + abs (Player2.vx) + abs (Player2.vy);
+			moveSpeed1 = 700 + abs (Player1.vx) + abs (Player1.vy);
+			moveSpeed2 = 700 + abs (Player2.vx) + abs (Player2.vy);
 		}
 	} else if (state == states.thrown) {
 		if (moveSpeed1 == 0 && moveSpeed2 == 0) {
@@ -174,17 +174,33 @@ function RopeHandleStateChanges ()
 function RopeMoveThrownRope () 
 {
 	if (moveSpeed1 > 0 || moveSpeed2 > 0 ) {
-		vertexArray[0][0] += lengthdir_x (moveSpeed1, dir1) * global.deltaTime;
-		vertexArray[0][1] += lengthdir_y (moveSpeed1, dir1) * global.deltaTime;
-		vertexArray[vertexCount - 1][0] += lengthdir_x (moveSpeed2, dir2) * global.deltaTime;
-		vertexArray[vertexCount - 1][1] += lengthdir_y (moveSpeed2, dir2) * global.deltaTime;
-		if (moveSpeed1 > 30 )
-			moveSpeed1 -=  moveSpeed1 * 0.5 *global.deltaTime;
+		var dx, dy;
+		dx = lengthdir_x (moveSpeed1, dir1) * global.deltaTime;
+		dy = lengthdir_y (moveSpeed1, dir1) * global.deltaTime;
+		
+		if (!position_meeting (vertexArray[0][0] + dx, vertexArray[0][1] + dy, Solid)) {
+			vertexArray[0][0] += dx;
+			vertexArray[0][1] += dy;
+		} else {
+			moveSpeed1 = 0;
+		}
+		
+		dx = lengthdir_x (moveSpeed2, dir2) * global.deltaTime;
+		dy = lengthdir_y (moveSpeed2, dir2) * global.deltaTime;
+		if (!position_meeting (vertexArray[vertexCount - 1][0] + dx, vertexArray[vertexCount - 1][1] + dy, Solid)) {
+			vertexArray[vertexCount - 1][0] += dx;
+			vertexArray[vertexCount - 1][1] += dy;
+		} else {
+			moveSpeed2 = 0;
+		}
+		
+		if (moveSpeed1 > 50 )
+			moveSpeed1 -=  moveSpeed1 * 0.6 *global.deltaTime;
 		else 
 			moveSpeed1 = 0;
 		
-		if (moveSpeed2 > 30 )
-			moveSpeed2 -=  moveSpeed2 * 0.5 *global.deltaTime;
+		if (moveSpeed2 > 50 )
+			moveSpeed2 -=  moveSpeed2 * 0.6 *global.deltaTime;
 		else 
 			moveSpeed2 = 0;
 	}
