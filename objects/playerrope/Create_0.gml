@@ -1,4 +1,11 @@
 //vertexCount must be even
+enum states
+{
+	carried,
+	thrown,
+	laying,
+	dragged
+}
 
 if (vertexCount % 2 == 1)
 	throw ("vertexCount is odd");

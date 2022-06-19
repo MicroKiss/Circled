@@ -123,7 +123,7 @@ function RopeDrawHitMarker ()
 {
 	var originalColor = draw_get_color ();
 	draw_set_colour (c_red);
-	if (state == "thrown") { 
+	if (state == states.thrown) { 
 		for (var i = 0; i < vertexCount - 10  ; i += vertexCount / 11) {
 			if (i + 11 >= vertexCount)
 				i = vertexCount - 12;
@@ -151,12 +151,22 @@ function RopeDrawRope ()
 
 function RopeHandleStateChanges () 
 {	
-	if (state =="carried" && Player1.wantsToThrow && Player2.wantsToThrow) {
-		state = "thrown";
-		dir1 = Player1.lastDir;
-		dir2 = Player2.lastDir;
-		moveSpeed1 = 500 + abs (Player1.vx) + abs (Player1.vy);
-		moveSpeed2 = 500 + abs (Player2.vx) + abs (Player2.vy);
+	if (state == states.carried) {
+		if (Player1.wantsToThrow && Player2.wantsToThrow) {
+			state = states.thrown;
+			dir1 = Player1.lastDir;
+			dir2 = Player2.lastDir;
+			moveSpeed1 = 500 + abs (Player1.vx) + abs (Player1.vy);
+			moveSpeed2 = 500 + abs (Player2.vx) + abs (Player2.vy);
+		}
+	} else if (state == states.thrown) {
+		if (moveSpeed1 == 0 && moveSpeed2 == 0) {
+			state = states.laying;
+		}
+	} else if (state == states.laying) {
+		RopeHandlePickup ();
+	} else if (state == states.dragged) {
+		RopeHandlePickup ();
 	}
 }
 
@@ -206,5 +216,77 @@ function RopeKillEnemy (enemy)
 	for (var j = 0;j < array_length (vertexArray);++j) {
 		history[array_length(history) - 1][j] = [];
 		array_copy (history[array_length(history) - 1][j], 0, vertexArray[j], 0, array_length(vertexArray[j]));
+	}
+}
+
+
+function RopeHandlePickup ()
+{
+	if (state == states.laying) {
+		var players = ds_list_create();
+		var num = collision_circle_list (vertexArray[0][0], vertexArray[0][1], 10, Player, false, true, players, false);
+		if (num > 0) {
+			for (var i = 0; i < num; ++i;) {
+				if (players[| i].inputs.use) {
+					state = states.dragged;
+					draggedByTheBeginning = true;
+					draggedBy = players[| i];
+					return;
+				}
+			}
+		}
+		var num = collision_circle_list (vertexArray[vertexCount -1][0], vertexArray[vertexCount -1][1], 10, Player, false, true, players, false);
+		if (num > 0) {
+			for (var i = 0; i < num; ++i;) {
+				if (players[| i].inputs.use) {
+					state = states.dragged;
+					draggedByTheBeginning = false;
+					draggedBy = players[| i];
+					return;
+				}
+			}
+		}
+	} else if (state == states.dragged) {
+		var player;
+		if (draggedBy.object_index == Player1) {
+			if (draggedByTheBeginning)
+				player = collision_circle(vertexArray[vertexCount - 1][0], vertexArray[vertexCount - 1][1],10,Player2,false,true);
+			else 
+				player = collision_circle(vertexArray[0][0], vertexArray[0][1],10,Player2,false,true);
+		} else if (draggedBy.object_index == Player2) {
+			if (draggedByTheBeginning)  
+				player = collision_circle(vertexArray[vertexCount - 1][0], vertexArray[vertexCount - 1][1],10,Player1,false,true);
+			else
+				player = collision_circle(vertexArray[0][0], vertexArray[0][1],10,Player1,false,true);
+		} 
+		
+		if (player != noone && player.inputs.use) {
+			
+			if (draggedByTheBeginning && draggedBy.object_index == Player2
+			||	!draggedByTheBeginning && draggedBy.object_index == Player1) {
+				for (var i = 0; i < vertexCount/2; ++i) {
+					var tempX = vertexArray[i][0];
+					var tempY = vertexArray[i][1];
+					vertexArray[i][0] = vertexArray[vertexCount - 1 - i][0];
+					vertexArray[i][1] = vertexArray[vertexCount - 1 - i][1];
+					vertexArray[vertexCount - 1 - i][0] = tempX;
+					vertexArray[vertexCount - 1 - i][1] = tempY;
+				}
+			}
+			
+			state = states.carried;
+			draggedBy = noone;
+		}
+	}
+}
+
+function RopeEndToDraggingPlayer ()
+{
+	if (draggedByTheBeginning) {
+		vertexArray[0][0] = draggedBy.x;
+		vertexArray[0][1] = draggedBy.y;
+	} else {
+		vertexArray[vertexCount - 1][0] = draggedBy.x;
+		vertexArray[vertexCount - 1][1] = draggedBy.y;
 	}
 }
