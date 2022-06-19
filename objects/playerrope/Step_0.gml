@@ -1,6 +1,6 @@
-RopeHandleThrowing ();
+RopeHandleStateChanges ();
 
-if (thrown) {
+if (state == "thrown") {
 	RopeMoveThrownRope ();
 	RopeThrownCheckAndKill ();
 	RopeDynamicMovement ();

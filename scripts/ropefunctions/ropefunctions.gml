@@ -123,7 +123,7 @@ function RopeDrawHitMarker ()
 {
 	var originalColor = draw_get_color ();
 	draw_set_colour (c_red);
-	if (thrown) { 
+	if (state == "thrown") { 
 		for (var i = 0; i < vertexCount - 10  ; i += vertexCount / 11) {
 			if (i + 11 >= vertexCount)
 				i = vertexCount - 12;
@@ -149,10 +149,10 @@ function RopeDrawRope ()
 }
 
 
-function RopeHandleThrowing () 
+function RopeHandleStateChanges () 
 {	
-	if (!thrown && Player1.wantsToThrow && Player2.wantsToThrow) {
-		thrown = true;
+	if (state =="carried" && Player1.wantsToThrow && Player2.wantsToThrow) {
+		state = "thrown";
 		dir1 = Player1.lastDir;
 		dir2 = Player2.lastDir;
 		moveSpeed1 = 500 + abs (Player1.vx) + abs (Player1.vy);

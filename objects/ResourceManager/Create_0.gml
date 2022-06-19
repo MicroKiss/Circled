@@ -16,3 +16,5 @@ global.player1Skin = playerSkin1;
 global.player2Skin = playerSkin2;
 paused = false;
 screenShot = -1;
+
+global.DEBUG = true;

@@ -6,8 +6,8 @@ function PlayerGetInputs(deviceNumber, controls = undefined){
 	inputs.moveLeft = gamepad_axis_value (deviceNumber, gp_axislh) < -.5;
 	inputs.moveDown = gamepad_axis_value (deviceNumber, gp_axislv) > .5;
 	inputs.moveUp = gamepad_axis_value (deviceNumber, gp_axislv) < -.5;
-	inputs.use = gamepad_button_check_pressed (deviceNumber, gp_face1); //A
-	inputs.attack = gamepad_button_check_pressed (deviceNumber, gp_face3); //X
+	inputs.use = gamepad_button_check (deviceNumber, gp_face1); //A
+	inputs.attack = gamepad_button_check (deviceNumber, gp_face3); //X
 	
 	if(controls != undefined) {
 	inputs.moveRight |= keyboard_check (controls.moveRight);
@@ -94,8 +94,8 @@ function PlayerHandleMovement () {
 		x += vx * dT;
 		y += vy * dT;
 	}
-	if (vx != 0 && vy != 0) 
-		lastDir = point_direction (0, 0, vx, vy);
+	if ((inputs.moveRight - inputs.moveLeft) != 0 || (inputs.moveDown - inputs.moveUp) != 0) 
+		lastDir = point_direction (0, 0, inputs.moveRight - inputs.moveLeft, (inputs.moveDown - inputs.moveUp));
 }
 
 

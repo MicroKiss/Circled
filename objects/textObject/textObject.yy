@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "infoBoxSprite",
-    "path": "sprites/infoBoxSprite/infoBoxSprite.yy",
+    "name": "textSprite",
+    "path": "sprites/textSprite/textSprite.yy",
   },
   "solid": false,
   "visible": true,
@@ -32,7 +32,7 @@
     "path": "folders/Objects/parents.yy",
   },
   "resourceVersion": "1.0",
-  "name": "textObject",
+  "name": "TextObject",
   "tags": [],
   "resourceType": "GMObject",
 }
