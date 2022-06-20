@@ -12,8 +12,6 @@ if (state == states.thrown) {
 } else if (state = states.laying) {
 	
 } else if (state = states.dragged) {
-	if (draggedBy == noone )
-		throw ("Someone must drag it")
 	RopeEndToDraggingPlayer ()
 	RopeDynamicMovement ();
 }

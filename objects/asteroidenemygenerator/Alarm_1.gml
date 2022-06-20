@@ -22,5 +22,5 @@ for (var i = 0; i < count; ++i) {
 	enemy.image_angle = dir;
 }
 
-alarm_set (1, 5 * room_speed);
+alarm_set (1, 15 * room_speed);
 

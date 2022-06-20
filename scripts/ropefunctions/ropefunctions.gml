@@ -156,8 +156,8 @@ function RopeHandleStateChanges ()
 			state = states.thrown;
 			dir1 = Player1.lastDir;
 			dir2 = Player2.lastDir;
-			moveSpeed1 = 700 + abs (Player1.vx) + abs (Player1.vy);
-			moveSpeed2 = 700 + abs (Player2.vx) + abs (Player2.vy);
+			moveSpeed1 = 1000 + 5 * (abs (Player1.vx) + abs (Player1.vy));
+			moveSpeed2 = 1000 + 5 * (abs (Player2.vx) + abs (Player2.vy));
 		}
 	} else if (state == states.thrown) {
 		if (moveSpeed1 == 0 && moveSpeed2 == 0) {
@@ -166,6 +166,8 @@ function RopeHandleStateChanges ()
 	} else if (state == states.laying) {
 		RopeHandlePickup ();
 	} else if (state == states.dragged) {
+		if (draggedBy == noone )
+			throw ("Someone must drag it")
 		RopeHandlePickup ();
 	}
 }
@@ -178,29 +180,40 @@ function RopeMoveThrownRope ()
 		dx = lengthdir_x (moveSpeed1, dir1) * global.deltaTime;
 		dy = lengthdir_y (moveSpeed1, dir1) * global.deltaTime;
 		
-		if (!position_meeting (vertexArray[0][0] + dx, vertexArray[0][1] + dy, Solid)) {
+		if (!position_meeting (vertexArray[0][0] + dx, vertexArray[0][1], Solid)) {
 			vertexArray[0][0] += dx;
+		} else {
+			dir1 = 180 - dir1;
+		}
+		
+		if (!position_meeting (vertexArray[0][0], vertexArray[0][1] + dy, Solid)) {
 			vertexArray[0][1] += dy;
 		} else {
-			moveSpeed1 = 0;
+			dir1 = 360 - dir1;
 		}
 		
 		dx = lengthdir_x (moveSpeed2, dir2) * global.deltaTime;
 		dy = lengthdir_y (moveSpeed2, dir2) * global.deltaTime;
-		if (!position_meeting (vertexArray[vertexCount - 1][0] + dx, vertexArray[vertexCount - 1][1] + dy, Solid)) {
+		
+		if (!position_meeting (vertexArray[vertexCount - 1][0] + dx, vertexArray[vertexCount - 1][1], Solid)) {
 			vertexArray[vertexCount - 1][0] += dx;
+		} else {
+			dir2 = 180 - dir2;
+		}
+		
+		if (!position_meeting (vertexArray[vertexCount - 1][0], vertexArray[vertexCount - 1][1] + dy, Solid)) {
 			vertexArray[vertexCount - 1][1] += dy;
 		} else {
-			moveSpeed2 = 0;
+			dir2 = 360 - dir2;
 		}
 		
 		if (moveSpeed1 > 50 )
-			moveSpeed1 -=  moveSpeed1 * 0.6 *global.deltaTime;
+			moveSpeed1 -=  moveSpeed1 * 0.8 *global.deltaTime;
 		else 
 			moveSpeed1 = 0;
 		
 		if (moveSpeed2 > 50 )
-			moveSpeed2 -=  moveSpeed2 * 0.6 *global.deltaTime;
+			moveSpeed2 -=  moveSpeed2 * 0.8 *global.deltaTime;
 		else 
 			moveSpeed2 = 0;
 	}

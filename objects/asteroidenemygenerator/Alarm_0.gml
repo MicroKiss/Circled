@@ -17,4 +17,4 @@ for (var i = 0; i < count; ++i) {
 	enemy.movSpeed = min (25 + current_time / 10000, 200)
 }
 
-alarm_set (0, 5 * room_speed);
+alarm_set (0, 20 * room_speed);
