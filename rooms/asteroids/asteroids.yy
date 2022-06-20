@@ -21,7 +21,6 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"TextObject","path":"objects/TextObject/TextObject.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1184.0,"y":672.0,"resourceVersion":"1.0","name":"inst_4DBD4FC","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Instances_1","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
-        {"properties":[],"isDnd":false,"objectId":{"name":"Camera","path":"objects/Camera/Camera.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1088.0,"y":480.0,"resourceVersion":"1.0","name":"inst_1FB9976F_1","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"asteroidEnemyGenerator","path":"objects/asteroidEnemyGenerator/asteroidEnemyGenerator.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":6.5,"scaleY":6.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":288.0,"y":1568.0,"resourceVersion":"1.0","name":"inst_6AE874FC","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Misc","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
@@ -307,7 +306,6 @@
     {"name":"inst_239F5FE6","path":"rooms/asteroids/asteroids.yy",},
     {"name":"inst_410FD70F","path":"rooms/asteroids/asteroids.yy",},
     {"name":"inst_A29AE93","path":"rooms/asteroids/asteroids.yy",},
-    {"name":"inst_1FB9976F_1","path":"rooms/asteroids/asteroids.yy",},
     {"name":"inst_6AE874FC","path":"rooms/asteroids/asteroids.yy",},
     {"name":"inst_41DE7267","path":"rooms/asteroids/asteroids.yy",},
     {"name":"inst_4DBD4FC","path":"rooms/asteroids/asteroids.yy",},

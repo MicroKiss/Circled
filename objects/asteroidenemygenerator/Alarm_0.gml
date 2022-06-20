@@ -1,3 +1,4 @@
+/// @description enemy2
 var count = 2;
 
 if (current_time > 30000)

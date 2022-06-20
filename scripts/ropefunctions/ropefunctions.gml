@@ -225,13 +225,13 @@ function RopeThrownCheckAndKill ()
 
 function RopeKillEnemy (enemy) 
 {
-	audio_play_sound(applauseSound, 0, 0);
+	audio_play_sound (applauseSound, 0, 0);
 	with (enemy) instance_destroy ();
-	array_resize(history,array_length(history) + 1);
+	array_resize (history,array_length(history) + 1);
 	history[array_length(history) - 1] = [];
 	for (var j = 0;j < array_length (vertexArray);++j) {
 		history[array_length(history) - 1][j] = [];
-		array_copy (history[array_length(history) - 1][j], 0, vertexArray[j], 0, array_length(vertexArray[j]));
+		array_copy (history[array_length (history) - 1][j], 0, vertexArray[j], 0, array_length (vertexArray[j]));
 	}
 }
 
@@ -239,7 +239,7 @@ function RopeKillEnemy (enemy)
 function RopeHandlePickup ()
 {
 	if (state == states.laying) {
-		var players = ds_list_create();
+		var players = ds_list_create ();
 		var num = collision_circle_list (vertexArray[0][0], vertexArray[0][1], 10, Player, false, true, players, false);
 		if (num > 0) {
 			for (var i = 0; i < num; ++i;) {
@@ -266,18 +266,17 @@ function RopeHandlePickup ()
 		var player;
 		if (draggedBy.object_index == Player1) {
 			if (draggedByTheBeginning)
-				player = collision_circle(vertexArray[vertexCount - 1][0], vertexArray[vertexCount - 1][1],10,Player2,false,true);
+				player = collision_circle (vertexArray[vertexCount - 1][0], vertexArray[vertexCount - 1][1], 10, Player2, false, true);
 			else 
-				player = collision_circle(vertexArray[0][0], vertexArray[0][1],10,Player2,false,true);
+				player = collision_circle (vertexArray[0][0], vertexArray[0][1], 10, Player2, false, true);
 		} else if (draggedBy.object_index == Player2) {
 			if (draggedByTheBeginning)  
-				player = collision_circle(vertexArray[vertexCount - 1][0], vertexArray[vertexCount - 1][1],10,Player1,false,true);
+				player = collision_circle (vertexArray[vertexCount - 1][0], vertexArray[vertexCount - 1][1], 10, Player1, false, true);
 			else
-				player = collision_circle(vertexArray[0][0], vertexArray[0][1],10,Player1,false,true);
+				player = collision_circle (vertexArray[0][0], vertexArray[0][1], 10, Player1, false, true);
 		} 
 		
 		if (player != noone && player.inputs.use) {
-			
 			if (draggedByTheBeginning && draggedBy.object_index == Player2
 			||	!draggedByTheBeginning && draggedBy.object_index == Player1) {
 				for (var i = 0; i < vertexCount/2; ++i) {
@@ -289,7 +288,6 @@ function RopeHandlePickup ()
 					vertexArray[vertexCount - 1 - i][1] = tempY;
 				}
 			}
-			
 			state = states.carried;
 			draggedBy = noone;
 		}

@@ -12,6 +12,7 @@
     {"id":{"name":"Enemy1","path":"objects/Enemy1/Enemy1.yy",},"order":0,},
     {"id":{"name":"welcomeSreen","path":"rooms/welcomeSreen/welcomeSreen.yy",},"order":4,},
     {"id":{"name":"inTransition1","path":"sequences/inTransition1/inTransition1.yy",},"order":1,},
+    {"id":{"name":"Enemy3","path":"objects/Enemy3/Enemy3.yy",},"order":2,},
     {"id":{"name":"ButtonTransition","path":"objects/ButtonTransition/ButtonTransition.yy",},"order":6,},
     {"id":{"name":"asteroidEnemyGenerator","path":"objects/asteroidEnemyGenerator/asteroidEnemyGenerator.yy",},"order":0,},
     {"id":{"name":"e1m4Rule","path":"objects/e1m4Rule/e1m4Rule.yy",},"order":2,},
