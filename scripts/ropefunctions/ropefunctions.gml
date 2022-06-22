@@ -208,12 +208,12 @@ function RopeMoveThrownRope ()
 		}
 		
 		if (moveSpeed1 > 50 )
-			moveSpeed1 -=  moveSpeed1 * 0.8 *global.deltaTime;
+			moveSpeed1 -=  moveSpeed1 * 0.8 * global.deltaTime;
 		else 
 			moveSpeed1 = 0;
 		
 		if (moveSpeed2 > 50 )
-			moveSpeed2 -=  moveSpeed2 * 0.8 *global.deltaTime;
+			moveSpeed2 -=  moveSpeed2 * 0.8 * global.deltaTime;
 		else 
 			moveSpeed2 = 0;
 	}
