@@ -60,6 +60,7 @@
     {"id":{"name":"Player","path":"objects/Player/Player.yy",},"order":0,},
     {"id":{"name":"Transition","path":"scripts/Transition/Transition.yy",},"order":3,},
     {"id":{"name":"playMusic","path":"sounds/playMusic/playMusic.yy",},"order":4,},
+    {"id":{"name":"AsteroidScripts","path":"scripts/AsteroidScripts/AsteroidScripts.yy",},"order":5,},
     {"id":{"name":"victorySequence","path":"sequences/victorySequence/victorySequence.yy",},"order":2,},
     {"id":{"name":"PlayerRope","path":"objects/PlayerRope/PlayerRope.yy",},"order":2,},
     {"id":{"name":"playerSkin3","path":"sprites/playerSkin3/playerSkin3.yy",},"order":2,},
