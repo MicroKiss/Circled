@@ -246,6 +246,10 @@ function RopeKillEnemy (enemy)
 		history[array_length(history) - 1][j] = [];
 		array_copy (history[array_length (history) - 1][j], 0, vertexArray[j], 0, array_length (vertexArray[j]));
 	}
+	
+	if instance_number (GameUI) {
+		GameUI.killedEnemies++;
+	}
 }
 
 

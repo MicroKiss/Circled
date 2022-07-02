@@ -18,3 +18,8 @@ paused = false;
 screenShot = -1;
 
 global.DEBUG = true;
+
+var saveFileName = "highscore.dat";
+global.saveFilePath = working_directory + saveFileName;
+
+global.highScore = ReadHighScore ();

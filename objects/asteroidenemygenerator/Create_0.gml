@@ -13,8 +13,9 @@ var GenerateEnemy2 = function()
 			randX = random_range (0, room_width);
 			randY = irandom (1) * room_height;
 		}
-		var enemy = instance_create_depth (randX, randY, depth-1, Enemy2);
-		enemy.movSpeed = min (25 + current_time / 10000, 200)
+		/*var enemy = */
+		instance_create_depth (randX, randY, depth-1, Enemy2);
+		//enemy.movSpeed = min (25 + current_time / 10000, 200)
 	}
 }
 
@@ -46,8 +47,8 @@ var GenerateEnemy3 = function()
 }
 
 
-timer1 = time_source_create (time_source_game, 1, time_source_units_seconds, GenerateEnemy2, [], -1)
-timer2 = time_source_create (time_source_game, 1, time_source_units_seconds, GenerateEnemy3, [], -1)
+timer1 = time_source_create (time_source_game, 10, time_source_units_seconds, GenerateEnemy2, [], -1)
+timer2 = time_source_create (time_source_game, 20, time_source_units_seconds, GenerateEnemy3, [], -1)
 
 time_source_start (timer1)
 time_source_start (timer2)
