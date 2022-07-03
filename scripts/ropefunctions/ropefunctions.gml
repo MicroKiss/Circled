@@ -177,8 +177,6 @@ function RopeHandleStateChanges ()
 			throw ("Someone must drag it")
 		RopeHandlePickup ();
 	}
-	
-	CheckEnemyRopeGrabber ();
 }
 
 

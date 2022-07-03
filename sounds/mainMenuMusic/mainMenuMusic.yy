@@ -11,8 +11,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "mainMenuMusic.mp3",
-  "duration": 56.659584,
+  "soundFile": "mainmenumusic.mp3",
+  "duration": 101.5902,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

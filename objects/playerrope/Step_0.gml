@@ -7,13 +7,15 @@ if (state == states.thrown) {
 } else if (state = states.carried) {
 	RopeEndsToPlayers ();
 	RopeDynamicMovement ();
-	RopeRubberEffectBetweenPlayers ()
+	RopeRubberEffectBetweenPlayers ();
 	RopeCircleCheckAndKill ();
+	CheckEnemyRopeGrabber ();
 } else if (state = states.laying) {
 	
 } else if (state = states.dragged) {
-	RopeEndToDraggingPlayer ()
+	RopeEndToDraggingPlayer ();
 	RopeDynamicMovement ();
+	CheckEnemyRopeGrabber ();
 }
 
 
