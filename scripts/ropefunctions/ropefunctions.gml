@@ -67,8 +67,8 @@ function RopeRubberEffectBetweenPlayers ()
 		Player2.vy -= lengthdir_y(Player2.spd,dir) * speedMultiplier * global.deltaTime;
 	}
 }
-	
-	
+
+
 function RopeCircleCheckAndKill () 
 {
 	ellipseXL = vertexArray[0][0];
@@ -141,11 +141,18 @@ function RopeDrawHitMarker ()
 
 function RopeDrawRope ()
 {
+	var lastColor = draw_get_color (); 
+	if (state == states.laying)
+		draw_set_colour (c_fuchsia);
+	
+	
 	draw_primitive_begin (pr_linestrip);
 	for (var i = 0; i < array_length (vertexArray); ++i) {
 		draw_vertex(vertexArray[i][0], vertexArray[i][1]);
 	}
 	draw_primitive_end ();
+	
+	draw_set_color (lastColor);
 }
 
 
@@ -170,6 +177,8 @@ function RopeHandleStateChanges ()
 			throw ("Someone must drag it")
 		RopeHandlePickup ();
 	}
+	
+	CheckEnemyRopeGrabber ();
 }
 
 
@@ -223,7 +232,7 @@ function RopeMoveThrownRope ()
 function RopeThrownCheckAndKill ()
 {
 	if (vertexCount < 11)
-		throw ("vertexCount smalelr than 11");
+		throw ("vertexCount smaller than 11");
 	for (var i = 0; i < vertexCount - 10  ; i += vertexCount / 11) {
 		if (i + 11 >= vertexCount)
 			i = vertexCount - 12;
@@ -238,7 +247,7 @@ function RopeThrownCheckAndKill ()
 
 function RopeKillEnemy (enemy) 
 {
-	audio_play_sound (applauseSound, 0, 0);
+	audio_play_sound (applauseSound, 1, 0);
 	with (enemy) instance_destroy ();
 	array_resize (history,array_length(history) + 1);
 	history[array_length(history) - 1] = [];
@@ -311,6 +320,7 @@ function RopeHandlePickup ()
 	}
 }
 
+
 function RopeEndToDraggingPlayer ()
 {
 	if (draggedByTheBeginning) {
@@ -319,5 +329,34 @@ function RopeEndToDraggingPlayer ()
 	} else {
 		vertexArray[vertexCount - 1][0] = draggedBy.x;
 		vertexArray[vertexCount - 1][1] = draggedBy.y;
+	}
+}
+
+
+function CheckEnemyRopeGrabber () 
+{
+	if (vertexCount < 11)
+		throw ("vertexCount smaller than 11");
+	for (var i = 0; i < vertexCount - 10  ; i += vertexCount / 11) {
+		if (i + 11 >= vertexCount)
+			i = vertexCount - 12;
+		var enemy = collision_line (vertexArray[i][0], vertexArray[i][1],
+									vertexArray[i + 11][0], vertexArray[i + 11][1],
+									EnemyRopeGrabber, false, true);
+		if (enemy != noone) {
+			if (enemy.canGrab == true) {
+				enemy.canGrab = false;
+				
+				var Reload = function(e) {
+					e.canGrab = true;
+					show_debug_message ("meghivodtam");
+					// TODO itt baj van mert valamiéert nem csak egyszer hivodik valszeg ezt az egesz fgügvényt ekl legy state függő ifbe
+				}
+				timer = time_source_create (time_source_game, 5, time_source_units_seconds, Reload, [enemy])
+
+				time_source_start (timer)
+				state = states.laying;
+			}
+		}
 	}
 }

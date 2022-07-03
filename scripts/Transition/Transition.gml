@@ -6,6 +6,7 @@ function TransitionStart(_roomTarget, _typeOut)
 {
 	if (!global.midTransition)
 	{
+		audio_play_sound (transitionSound, 1, 0);
 		global.midTransition = true;
 		global.roomTarget = _roomTarget;
 		TransitionPlaceSequence(_typeOut);

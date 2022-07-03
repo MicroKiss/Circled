@@ -11,8 +11,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "applauseSound",
-  "duration": 0.0,
+  "soundFile": "applausesound.wav",
+  "duration": 1.466667,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

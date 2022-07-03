@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "buttonSound3.mp3",
-  "duration": 1.959167,
+  "soundFile": "transitionsound.wav",
+  "duration": 2.504989,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "buttonSound3",
+  "name": "transitionSound",
   "tags": [],
   "resourceType": "GMSound",
 }
