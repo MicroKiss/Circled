@@ -5,7 +5,6 @@ if (state == Enemy3states.moving) {
 	if (Distance ([x,y],destination) <= moveSpeed * global.deltaTime) {
 		state = Enemy3states.arrived;
 		sprite_index = enemy1Sprite;
-		alarm_set (0, room_speed * 2);
 		bulletDir = dir;
 		
 		var Shoot = function() {

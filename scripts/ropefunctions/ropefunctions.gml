@@ -141,9 +141,9 @@ function RopeDrawHitMarker ()
 
 function RopeDrawRope ()
 {
-	var lastColor = draw_get_color (); 
-	if (state == states.laying)
-		draw_set_colour (c_fuchsia);
+	var lastColor = draw_get_color ();
+		
+	draw_set_colour (drawColor);
 	
 	
 	draw_primitive_begin (pr_linestrip);
@@ -169,6 +169,7 @@ function RopeHandleStateChanges ()
 	} else if (state == states.thrown) {
 		if (moveSpeed1 == 0 && moveSpeed2 == 0) {
 			state = states.laying;
+			time_source_start (changeColorTimer);
 		}
 	} else if (state == states.laying) {
 		RopeHandlePickup ();
@@ -264,22 +265,29 @@ function RopeHandlePickup ()
 {
 	if (state == states.laying) {
 		var players = ds_list_create ();
+		
+
 		var num = collision_circle_list (vertexArray[0][0], vertexArray[0][1], 10, Player, false, true, players, false);
 		if (num > 0) {
 			for (var i = 0; i < num; ++i;) {
 				if (players[| i].inputs.use) {
 					state = states.dragged;
+					time_source_stop (changeColorTimer);
+					drawColor = c_white;
 					draggedByTheBeginning = true;
 					draggedBy = players[| i];
 					return;
 				}
 			}
 		}
+		ds_list_clear (players);
 		var num = collision_circle_list (vertexArray[vertexCount -1][0], vertexArray[vertexCount -1][1], 10, Player, false, true, players, false);
 		if (num > 0) {
 			for (var i = 0; i < num; ++i;) {
 				if (players[| i].inputs.use) {
 					state = states.dragged;
+					time_source_stop (changeColorTimer);
+					drawColor = c_white;
 					draggedByTheBeginning = false;
 					draggedBy = players[| i];
 					return;
@@ -313,6 +321,8 @@ function RopeHandlePickup ()
 				}
 			}
 			state = states.carried;
+			time_source_stop (changeColorTimer);
+			drawColor = c_white;
 			draggedBy = noone;
 		}
 	}
@@ -345,15 +355,28 @@ function CheckEnemyRopeGrabber ()
 			if (enemy.canGrab == true) {
 				enemy.canGrab = false;
 				
-				var Reload = function(e) {
-					e.canGrab = true;
-					show_debug_message ("meghivodtam");
-					// TODO itt baj van mert valamiéert nem csak egyszer hivodik valszeg ezt az egesz fgügvényt ekl legy state függő ifbe
+				var CountDown = function(e) {
+					if (instance_exists (e )) {
+						e.countDown--;
+						if (e.countDown == 0) {
+							e.canGrab = true;
+						}
+					}
 				}
-				timer = time_source_create (time_source_game, 5, time_source_units_seconds, Reload, [enemy])
-
+				timer = time_source_create (time_source_game, 1, time_source_units_seconds, CountDown, [enemy], 5)
+				enemy.countDown = 5;
 				time_source_start (timer)
 				state = states.laying;
+				time_source_start (changeColorTimer)
+				draggedBy = noone;
+				
+				Player1.currHP -= enemy.damage;
+				Player2.currHP -= enemy.damage;
+				if instance_number (GameUI) {
+					GameUI.player1Hits++;
+					GameUI.player2Hits++;
+				}
+				
 			}
 		}
 	}
