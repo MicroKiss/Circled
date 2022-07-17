@@ -1,4 +1,3 @@
-//vertexCount must be even
 enum states
 {
 	carried,

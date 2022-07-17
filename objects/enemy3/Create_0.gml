@@ -11,3 +11,4 @@ dir = point_direction (x, y, destination[0], destination[1]);
 
 sprite_index = enemy2Sprite;
 image_angle = dir;
+timer = noone;

@@ -29,8 +29,8 @@ function PlayerHandleMovement () {
     for (var i = 0; i < loopindex; i++) {
         var dT = global.deltaTime / loopindex;
 
-		ax = -vx * 3;
-		ay = -vy * 3;
+		ax = -vx * 16;
+		ay = -vy * 16;
 		vx += (ax + additionalHsp) * dT ;
 		vy += (ay + additionalVsp) * dT ;
 		
@@ -94,8 +94,13 @@ function PlayerHandleMovement () {
 		x += vx * dT;
 		y += vy * dT;
 	}
-	if ((inputs.moveRight - inputs.moveLeft) != 0 || (inputs.moveDown - inputs.moveUp) != 0) 
+	if ((inputs.moveRight - inputs.moveLeft) != 0 || (inputs.moveDown - inputs.moveUp) != 0) {
+		image_speed = 1;
 		lastDir = point_direction (0, 0, inputs.moveRight - inputs.moveLeft, (inputs.moveDown - inputs.moveUp));
+	} else {
+		image_speed = 0;
+	}
+	image_xscale = (inputs.moveRight - inputs.moveLeft) != 0 ? (inputs.moveRight - inputs.moveLeft) : image_xscale;
 }
 
 
