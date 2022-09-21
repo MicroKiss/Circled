@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "vikingDeath",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"bdfb1c76-dfe6-48c9-bb9c-8f43033898b6","path":"sprites/vikingDeath/vikingDeath.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"bdfb1c76-dfe6-48c9-bb9c-8f43033898b6","path":"sprites/vikingDeath/vikingDeath.yy",},"LayerId":{"name":"27048be6-e45d-41e9-8c2b-9422a4e2abe9","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"vikingDeath","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","name":"bdfb1c76-dfe6-48c9-bb9c-8f43033898b6","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"2cd50703-9fb4-4308-a4bf-7e41f8b3426f","path":"sprites/vikingDeath/vikingDeath.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"2cd50703-9fb4-4308-a4bf-7e41f8b3426f","path":"sprites/vikingDeath/vikingDeath.yy",},"LayerId":{"name":"27048be6-e45d-41e9-8c2b-9422a4e2abe9","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"vikingDeath","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","name":"2cd50703-9fb4-4308-a4bf-7e41f8b3426f","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"11dcfb30-3dd9-45d3-82d1-d740b8f5a149","path":"sprites/vikingDeath/vikingDeath.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"11dcfb30-3dd9-45d3-82d1-d740b8f5a149","path":"sprites/vikingDeath/vikingDeath.yy",},"LayerId":{"name":"27048be6-e45d-41e9-8c2b-9422a4e2abe9","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"vikingDeath","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","name":"11dcfb30-3dd9-45d3-82d1-d740b8f5a149","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"83e0b651-eca5-4560-a749-d08af699f7d0","path":"sprites/vikingDeath/vikingDeath.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"83e0b651-eca5-4560-a749-d08af699f7d0","path":"sprites/vikingDeath/vikingDeath.yy",},"LayerId":{"name":"27048be6-e45d-41e9-8c2b-9422a4e2abe9","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"vikingDeath","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","name":"83e0b651-eca5-4560-a749-d08af699f7d0","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"bdfb1c76-dfe6-48c9-bb9c-8f43033898b6",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2cd50703-9fb4-4308-a4bf-7e41f8b3426f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"11dcfb30-3dd9-45d3-82d1-d740b8f5a149",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"83e0b651-eca5-4560-a749-d08af699f7d0",},
   ],
   "sequence": {
-    "spriteId": {"name":"vikingDeath","path":"sprites/vikingDeath/vikingDeath.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "vikingDeath",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -46,15 +43,15 @@
     "autoRecord": true,
     "volume": 1.0,
     "length": 4.0,
-    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MessageEventKeyframe",},
-    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MomentsEventKeyframe",},
+    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
+    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"0d125408-dcb8-4b24-ac45-acf755ef50a7","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bdfb1c76-dfe6-48c9-bb9c-8f43033898b6","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-            {"id":"f2afcf55-801e-41eb-afcc-8522a02f7717","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2cd50703-9fb4-4308-a4bf-7e41f8b3426f","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-            {"id":"54a6c9f3-f31b-48fc-bdce-849e953b3658","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"11dcfb30-3dd9-45d3-82d1-d740b8f5a149","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-            {"id":"2143f3db-fb53-4ce9-a55c-c9c52d28bc76","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"83e0b651-eca5-4560-a749-d08af699f7d0","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"SpriteFrameKeyframe",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+            {"id":"0d125408-dcb8-4b24-ac45-acf755ef50a7","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bdfb1c76-dfe6-48c9-bb9c-8f43033898b6","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"f2afcf55-801e-41eb-afcc-8522a02f7717","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2cd50703-9fb4-4308-a4bf-7e41f8b3426f","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"54a6c9f3-f31b-48fc-bdce-849e953b3658","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"11dcfb30-3dd9-45d3-82d1-d740b8f5a149","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"2143f3db-fb53-4ce9-a55c-c9c52d28bc76","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"83e0b651-eca5-4560-a749-d08af699f7d0","path":"sprites/vikingDeath/vikingDeath.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 24,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"vikingDeath","path":"sprites/vikingDeath/vikingDeath.yy",},
-    "resourceVersion": "1.4",
-    "name": "vikingDeath",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"27048be6-e45d-41e9-8c2b-9422a4e2abe9","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"27048be6-e45d-41e9-8c2b-9422a4e2abe9","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Viking",
     "path": "folders/Sprites/EntitySprites/playerSkins/Viking.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "vikingDeath",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

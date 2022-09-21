@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "vikingWalk",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,27 +27,17 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"b8e441e9-516c-4ccb-abdc-98a7c0834097","path":"sprites/vikingWalk/vikingWalk.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b8e441e9-516c-4ccb-abdc-98a7c0834097","path":"sprites/vikingWalk/vikingWalk.yy",},"LayerId":{"name":"0bf586e1-a1fb-40a5-9ddf-dfae5e20eb68","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"vikingWalk","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","name":"b8e441e9-516c-4ccb-abdc-98a7c0834097","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"6748e1fb-6387-45c1-ad10-8dd8cdc4f955","path":"sprites/vikingWalk/vikingWalk.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6748e1fb-6387-45c1-ad10-8dd8cdc4f955","path":"sprites/vikingWalk/vikingWalk.yy",},"LayerId":{"name":"0bf586e1-a1fb-40a5-9ddf-dfae5e20eb68","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"vikingWalk","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","name":"6748e1fb-6387-45c1-ad10-8dd8cdc4f955","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"bdbd70b6-06b4-4648-b12e-13c2129a6031","path":"sprites/vikingWalk/vikingWalk.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"bdbd70b6-06b4-4648-b12e-13c2129a6031","path":"sprites/vikingWalk/vikingWalk.yy",},"LayerId":{"name":"0bf586e1-a1fb-40a5-9ddf-dfae5e20eb68","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"vikingWalk","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","name":"bdbd70b6-06b4-4648-b12e-13c2129a6031","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"7c7b79d6-4100-4ad4-a9c5-a006c5db39d6","path":"sprites/vikingWalk/vikingWalk.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7c7b79d6-4100-4ad4-a9c5-a006c5db39d6","path":"sprites/vikingWalk/vikingWalk.yy",},"LayerId":{"name":"0bf586e1-a1fb-40a5-9ddf-dfae5e20eb68","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"vikingWalk","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","name":"7c7b79d6-4100-4ad4-a9c5-a006c5db39d6","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"09f97a0f-3704-4339-bae2-22632f70cfed","path":"sprites/vikingWalk/vikingWalk.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"09f97a0f-3704-4339-bae2-22632f70cfed","path":"sprites/vikingWalk/vikingWalk.yy",},"LayerId":{"name":"0bf586e1-a1fb-40a5-9ddf-dfae5e20eb68","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"vikingWalk","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","name":"09f97a0f-3704-4339-bae2-22632f70cfed","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"c70fa910-4215-403d-a82c-11a47e352fbd","path":"sprites/vikingWalk/vikingWalk.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c70fa910-4215-403d-a82c-11a47e352fbd","path":"sprites/vikingWalk/vikingWalk.yy",},"LayerId":{"name":"0bf586e1-a1fb-40a5-9ddf-dfae5e20eb68","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"vikingWalk","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","name":"c70fa910-4215-403d-a82c-11a47e352fbd","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b8e441e9-516c-4ccb-abdc-98a7c0834097",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6748e1fb-6387-45c1-ad10-8dd8cdc4f955",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"bdbd70b6-06b4-4648-b12e-13c2129a6031",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7c7b79d6-4100-4ad4-a9c5-a006c5db39d6",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"09f97a0f-3704-4339-bae2-22632f70cfed",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c70fa910-4215-403d-a82c-11a47e352fbd",},
   ],
   "sequence": {
-    "spriteId": {"name":"vikingWalk","path":"sprites/vikingWalk/vikingWalk.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "vikingWalk",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 6.0,
@@ -52,17 +45,17 @@
     "autoRecord": true,
     "volume": 1.0,
     "length": 6.0,
-    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MessageEventKeyframe",},
-    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MomentsEventKeyframe",},
+    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
+    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"4c67e662-67cf-4ac9-89da-4055bc763e4c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b8e441e9-516c-4ccb-abdc-98a7c0834097","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-            {"id":"f6f2202c-d344-4f3a-81fe-30bb23cb7f09","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6748e1fb-6387-45c1-ad10-8dd8cdc4f955","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-            {"id":"533b6153-8dab-4f3b-a741-54fa9f6faac9","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bdbd70b6-06b4-4648-b12e-13c2129a6031","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-            {"id":"af8c615c-1944-41fb-acf1-ad3cf1c76c82","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7c7b79d6-4100-4ad4-a9c5-a006c5db39d6","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-            {"id":"65443fb9-bfdd-4f67-a32f-3e298199894a","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"09f97a0f-3704-4339-bae2-22632f70cfed","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-            {"id":"87f94903-3b50-4cfd-8d7f-bc8477c80567","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c70fa910-4215-403d-a82c-11a47e352fbd","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"SpriteFrameKeyframe",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+            {"id":"4c67e662-67cf-4ac9-89da-4055bc763e4c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b8e441e9-516c-4ccb-abdc-98a7c0834097","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"f6f2202c-d344-4f3a-81fe-30bb23cb7f09","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6748e1fb-6387-45c1-ad10-8dd8cdc4f955","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"533b6153-8dab-4f3b-a741-54fa9f6faac9","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bdbd70b6-06b4-4648-b12e-13c2129a6031","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"af8c615c-1944-41fb-acf1-ad3cf1c76c82","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7c7b79d6-4100-4ad4-a9c5-a006c5db39d6","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"65443fb9-bfdd-4f67-a32f-3e298199894a","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"09f97a0f-3704-4339-bae2-22632f70cfed","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"87f94903-3b50-4cfd-8d7f-bc8477c80567","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c70fa910-4215-403d-a82c-11a47e352fbd","path":"sprites/vikingWalk/vikingWalk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -78,22 +71,13 @@
     "yorigin": 24,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"vikingWalk","path":"sprites/vikingWalk/vikingWalk.yy",},
-    "resourceVersion": "1.4",
-    "name": "vikingWalk",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0bf586e1-a1fb-40a5-9ddf-dfae5e20eb68","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0bf586e1-a1fb-40a5-9ddf-dfae5e20eb68","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Viking",
     "path": "folders/Sprites/EntitySprites/playerSkins/Viking.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "vikingWalk",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

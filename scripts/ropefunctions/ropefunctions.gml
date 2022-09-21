@@ -355,8 +355,8 @@ function CheckEnemyRopeGrabber ()
 			if (enemy.canGrab == true) {
 				enemy.canGrab = false;
 				
-				var CountDown = function(e) {
-					if (instance_exists (e )) {
+				var CountDown = function (e) {
+					if (instance_exists (e)) {
 						e.countDown--;
 						if (e.countDown == 0) {
 							e.canGrab = true;
